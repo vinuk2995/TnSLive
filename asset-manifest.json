@@ -1,20 +1,20 @@
 {
   "files": {
     "main.css": "/TnSLive/static/css/main.bd239f59.chunk.css",
-    "main.js": "/TnSLive/static/js/main.63b137bb.chunk.js",
-    "main.js.map": "/TnSLive/static/js/main.63b137bb.chunk.js.map",
+    "main.js": "/TnSLive/static/js/main.6f9f24b8.chunk.js",
+    "main.js.map": "/TnSLive/static/js/main.6f9f24b8.chunk.js.map",
     "runtime-main.js": "/TnSLive/static/js/runtime-main.b7bfeb40.js",
     "runtime-main.js.map": "/TnSLive/static/js/runtime-main.b7bfeb40.js.map",
-    "static/js/2.267307b6.chunk.js": "/TnSLive/static/js/2.267307b6.chunk.js",
-    "static/js/2.267307b6.chunk.js.map": "/TnSLive/static/js/2.267307b6.chunk.js.map",
+    "static/js/2.b6317847.chunk.js": "/TnSLive/static/js/2.b6317847.chunk.js",
+    "static/js/2.b6317847.chunk.js.map": "/TnSLive/static/js/2.b6317847.chunk.js.map",
     "index.html": "/TnSLive/index.html",
     "static/css/main.bd239f59.chunk.css.map": "/TnSLive/static/css/main.bd239f59.chunk.css.map",
-    "static/js/2.267307b6.chunk.js.LICENSE.txt": "/TnSLive/static/js/2.267307b6.chunk.js.LICENSE.txt"
+    "static/js/2.b6317847.chunk.js.LICENSE.txt": "/TnSLive/static/js/2.b6317847.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.b7bfeb40.js",
-    "static/js/2.267307b6.chunk.js",
+    "static/js/2.b6317847.chunk.js",
     "static/css/main.bd239f59.chunk.css",
-    "static/js/main.63b137bb.chunk.js"
+    "static/js/main.6f9f24b8.chunk.js"
   ]
 }
