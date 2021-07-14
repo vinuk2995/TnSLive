@@ -1,25 +1,59 @@
-import logo from './logo.svg';
-import './App.css';
+import { createMuiTheme, MuiThemeProvider } from "@material-ui/core";
+import React, { useEffect, useState } from "react";
+import { useRef } from "react";
+import { connect } from "react-redux";
+import "./App.css";
+// import theme from "./Globalcss";
+import Routes from "./router/Route";
 
-function App() {
+const mapStateToProps = (state) => {
+  return { darkMode: state.darkMode };
+};
+const App = ({ darkMode }) => {
+  const isMounted = useRef(false);
+  const [theme, setTheme] = useState({
+    palette: {
+      type: "light",
+      primary: {
+        main: "#3f51b5",
+      },
+      secondary: {
+        main: "#e33371",
+      },
+      background: { default: "#f1f3f4 " },
+    },
+  });
+
+  useEffect(() => {
+    if (isMounted.current) {
+      let newPaletteType = theme.palette.type === "light" ? "dark" : "light";
+      setTheme({
+        palette: {
+          type: newPaletteType,
+          primary: {
+            main: newPaletteType === "dark" ? "#bb8cfc" : "#3f51b5",
+          },
+          secondary: {
+            main: newPaletteType === "dark" ? "#03DAC5" : "#e33371",
+          },
+          background: {
+            default: newPaletteType === "dark" ? "#303030" : "#f1f3f4",
+          },
+        },
+      });
+    } else {
+      isMounted.current = true;
+    }
+  }, [darkMode]);
+
+  const muiTheme = createMuiTheme(theme);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <MuiThemeProvider theme={muiTheme}>
+        <Routes />
+      </MuiThemeProvider>
     </div>
   );
-}
+};
 
-export default App;
+export default connect(mapStateToProps)(App);
