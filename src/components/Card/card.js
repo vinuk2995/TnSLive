@@ -13,7 +13,7 @@ import { Link } from "react-router-dom";
 const Data = [
   {
     langName: "React",
-    info: "React is a Javascript library created by FaceBook. It is used for building the reusable components.",
+    info: "React is a Javascript library mainly used for building the reusable components.",
   },
   {
     langName: "Javascript",
