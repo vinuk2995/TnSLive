@@ -21,6 +21,7 @@ const useStyles = makeStyles((theme) => ({
         : "#3f51b5 !important",
     backgroundColor:
       theme.palette.type === "dark" ? "#303030 !important" : "#fff !important",
+      marginTop : "3%"
   },
   darkModeAdjustError: {
     color:
@@ -29,6 +30,7 @@ const useStyles = makeStyles((theme) => ({
         : "rgb(97, 26, 21) !important",
     backgroundColor:
       theme.palette.type === "dark" ? "rgb(24, 6, 5) !important" : "rgb(253, 236, 234) !important",
+      marginTop : "3%"
   },
 }));
 
