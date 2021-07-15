@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/TnSLive/static/css/main.bd239f59.chunk.css",
-    "main.js": "/TnSLive/static/js/main.e0e20b67.chunk.js",
-    "main.js.map": "/TnSLive/static/js/main.e0e20b67.chunk.js.map",
+    "main.js": "/TnSLive/static/js/main.b0957eb0.chunk.js",
+    "main.js.map": "/TnSLive/static/js/main.b0957eb0.chunk.js.map",
     "runtime-main.js": "/TnSLive/static/js/runtime-main.b7bfeb40.js",
     "runtime-main.js.map": "/TnSLive/static/js/runtime-main.b7bfeb40.js.map",
     "static/js/2.b6317847.chunk.js": "/TnSLive/static/js/2.b6317847.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.b7bfeb40.js",
     "static/js/2.b6317847.chunk.js",
     "static/css/main.bd239f59.chunk.css",
-    "static/js/main.e0e20b67.chunk.js"
+    "static/js/main.b0957eb0.chunk.js"
   ]
 }
