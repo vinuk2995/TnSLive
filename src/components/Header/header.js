@@ -83,7 +83,7 @@ const Header = ({ darkMode }) => {
             <MenuIcon className={classes.iconColor} />
           </IconButton>
           <img
-            src={darkMode ? "/out_dark.png" : "/out.png"}
+            src={darkMode ? "images/out_dark.png" : "images/out.png"}
             alt="TnS"
             className={classes.logo}
           />

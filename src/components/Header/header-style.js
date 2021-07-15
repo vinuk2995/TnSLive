@@ -34,7 +34,7 @@ const headerStyle = makeStyles((theme) => ({
       color: theme.palette.type === "dark" ? "#fff" : "#3f51b5",
     },
     iconColor : {
-      color : theme.palette.type === "dark" ? "#bb8cfc" : "#3f51b5",
+      color : theme.palette.type === "dark" ? "#bb8cfc !important" : "#3f51b5 !important",
     }
   }));
   
