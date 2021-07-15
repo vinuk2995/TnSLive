@@ -25,6 +25,8 @@ import { Link } from "react-router-dom";
 import AssessmentIcon from "@material-ui/icons/Assessment";
 import ChromeReaderModeIcon from "@material-ui/icons/ChromeReaderMode";
 import ClassIcon from "@material-ui/icons/Class";
+import ImageOut from './out.png';
+import ImageOutDark from './out_dark.png';
 
 const LightTooltip = withStyles((theme) => ({
   tooltip: {
@@ -83,7 +85,7 @@ const Header = ({ darkMode }) => {
             <MenuIcon className={classes.iconColor} />
           </IconButton>
           <img
-            src={darkMode ? "images/out_dark.png" : "images/out.png"}
+            src={darkMode ? ImageOutDark : ImageOut}
             alt="TnS"
             className={classes.logo}
           />
@@ -111,7 +113,7 @@ const Header = ({ darkMode }) => {
           className={classes.sidebar}
         >
           <img
-            src={darkMode ? "/out_dark.png" : "/out.png"}
+            src={darkMode ? ImageOutDark : ImageOut}
             alt="TnS"
             className={classes.logoSidebar}
           />
