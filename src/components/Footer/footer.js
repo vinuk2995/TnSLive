@@ -6,6 +6,8 @@ import { Button, Grid } from "@material-ui/core";
 import { connect, useDispatch } from "react-redux";
 import footerStyle from "./footer-style";
 import { setlangName } from "../../actions";
+import ImageOut from './out.png';
+import ImageOutDark from './out_dark.png';
 
 const mapStateToProps = (state) => {
   return {
@@ -55,7 +57,7 @@ const Footer = ({ langName, darkMode }) => {
               <Grid item xs={12} sm={4}>
                 <Toolbar>
                   <img
-                    src={darkMode ? "/out_dark.png" : "/out.png"}
+                    src={darkMode ? ImageOutDark : ImageOut}
                     alt="TnS"
                     className={classes.logo}
                   />
