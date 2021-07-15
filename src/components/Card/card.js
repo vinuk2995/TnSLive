@@ -53,10 +53,10 @@ const MediaCard = ({ isCardClicked }) => {
       justify="space-between"
     >
       <Grid item xs={12}>
-        <Grid container justify="center" spacing={5}>
+        <Grid container justify="center" spacing={2}>
           {Data.map((data) => {
             return (
-              <Grid item xs={6} sm={3}>
+              <Grid item xs={11} sm={3}>
                 <Paper>
                   <Card
                     elevation={4}
