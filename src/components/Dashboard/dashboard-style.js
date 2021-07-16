@@ -23,9 +23,10 @@ const dashboardStyle = makeStyles((theme) => ({
         cursor: "pointer",
       },
       marginTop5: {
-        marginTop: "4em",
+        // marginTop: "2em",
         marginLeft: "3%",
       },
+      marginTop6 : {},
       Empty: {},
       colorh4: {
         color:
@@ -41,6 +42,7 @@ const dashboardStyle = makeStyles((theme) => ({
       },
       marginTop3: {
         marginTop: "3%",
+        marginLeft : "3%"
       },
       mgnBottom: {
         marginBottom: "3%",
