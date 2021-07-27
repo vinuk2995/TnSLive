@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/TnSLive/static/css/main.bd239f59.chunk.css",
-    "main.js": "/TnSLive/static/js/main.fb948f46.chunk.js",
-    "main.js.map": "/TnSLive/static/js/main.fb948f46.chunk.js.map",
+    "main.js": "/TnSLive/static/js/main.0b2d773d.chunk.js",
+    "main.js.map": "/TnSLive/static/js/main.0b2d773d.chunk.js.map",
     "runtime-main.js": "/TnSLive/static/js/runtime-main.b7bfeb40.js",
     "runtime-main.js.map": "/TnSLive/static/js/runtime-main.b7bfeb40.js.map",
-    "static/js/2.b6317847.chunk.js": "/TnSLive/static/js/2.b6317847.chunk.js",
-    "static/js/2.b6317847.chunk.js.map": "/TnSLive/static/js/2.b6317847.chunk.js.map",
+    "static/js/2.8e67b0ee.chunk.js": "/TnSLive/static/js/2.8e67b0ee.chunk.js",
+    "static/js/2.8e67b0ee.chunk.js.map": "/TnSLive/static/js/2.8e67b0ee.chunk.js.map",
     "index.html": "/TnSLive/index.html",
     "static/css/main.bd239f59.chunk.css.map": "/TnSLive/static/css/main.bd239f59.chunk.css.map",
-    "static/js/2.b6317847.chunk.js.LICENSE.txt": "/TnSLive/static/js/2.b6317847.chunk.js.LICENSE.txt",
+    "static/js/2.8e67b0ee.chunk.js.LICENSE.txt": "/TnSLive/static/js/2.8e67b0ee.chunk.js.LICENSE.txt",
     "static/media/out.38829216.png": "/TnSLive/static/media/out.38829216.png",
     "static/media/out_dark.fdea808d.png": "/TnSLive/static/media/out_dark.fdea808d.png"
   },
   "entrypoints": [
     "static/js/runtime-main.b7bfeb40.js",
-    "static/js/2.b6317847.chunk.js",
+    "static/js/2.8e67b0ee.chunk.js",
     "static/css/main.bd239f59.chunk.css",
-    "static/js/main.fb948f46.chunk.js"
+    "static/js/main.0b2d773d.chunk.js"
   ]
 }
