@@ -4,3 +4,4 @@ export const SET_LangName = "SET_LangName";
 export const SET_DialogOpen = "SET_DialogOpen";
 export const SET_DialogQnAOpen = "SET_DialogQnAOpen";
 export const ADD_mcqList = "ADD_mcqList";
+export const SET_queCount = "SET_queCount";

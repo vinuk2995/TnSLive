@@ -2,7 +2,8 @@ import { makeStyles } from "@material-ui/core";
 
 const cardStyle = makeStyles((theme) => ({
     root: {
-      margin: "1%",
+      margin: ".8%",
+      minWidth : "200px"
     },
     media: {
       height: 70,

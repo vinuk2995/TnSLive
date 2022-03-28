@@ -41,7 +41,7 @@ const dashboardStyle = makeStyles((theme) => ({
         marginTop: "1px",
       },
       marginTop3: {
-        marginTop: "3%",
+        marginTop: "1%",
         marginLeft : "3%"
       },
       mgnBottom: {

@@ -5,6 +5,7 @@ import {
     ADD_darkMode,
     SET_DialogOpen,
     SET_DialogQnAOpen,
+    SET_queCount
   } from "../constants/action-types";
   
   const initialState = {
@@ -1194,6 +1195,18 @@ import {
         correct: "Effect re-runs if and only if value of TnS_user variable changes",
       },
       {
+        question: "Which of the following is not grid breakpoint ?",
+        code : "",
+        langName : "React",
+        answers: [
+          { Option: "xs", isCorrect: false },
+          { Option: "sm", isCorrect: false },
+          { Option: "md", isCorrect: false },
+          { Option: "xd", isCorrect: true },
+        ],
+        correct: "xd",
+      },
+      {
         question: "Javascript is single threaded language.",
         code : "",
         langName : "Javascript",
@@ -1478,8 +1491,149 @@ import {
         ],
         correct: `It will remove the underline.`,
       },
+      {
+        question: "In React component names should always start with capital letter because react treats components starting with lowercase letters as DOM tags.",
+        code : ``,
+        langName : "React",
+        answers: [ 
+          { Option: `True`, isCorrect: true },
+          { Option: `False`, isCorrect: false },
+        ],
+        correct: `True`,
+      },
+      {
+        question: "What will be output on console ?",
+        code : `
+        for(var i=0 ;i<5;i++)
+        {
+          setTimeout(function(){ console.log(i) }, i);
+        }
+        `,
+        langName : "Javascript",
+        answers: [ 
+          { Option: `0 1 2 3 4 `, isCorrect: false },
+          { Option: `0 0 0 0 0 `, isCorrect: false },
+          { Option: `5 5 5 5 5 `, isCorrect: true },
+          { Option: `0 5 5 5 5 `, isCorrect: false },
+        ],
+        correct: `5 5 5 5 5 `,
+      },
+      {
+        question: "What will be the output ?",
+        code : `
+        for(let i=0 ;i<5;i++)
+        {
+          setTimeout(function(){ console.log(i) }, i);
+        }
+        `,
+        langName : "Javascript",
+        answers: [ 
+          { Option: `0 1 2 3 4 `, isCorrect: true },
+          { Option: `0 0 0 0 0 `, isCorrect: false },
+          { Option: `5 5 5 5 5 `, isCorrect: false },
+          { Option: `0 5 5 5 5 `, isCorrect: false },
+        ],
+        correct: `0 1 2 3 4 `,
+      },
+      {
+        question: "What will be output of TnS_Traingle?",
+        code : `
+        function TnS_Traingle()
+        {
+          var height = 10 ;
+          let base = 20 ;
+          
+          var height = 20;
+          let base = 30;
+          
+          return 0.5*base*height ;
+        }
+        `,
+        langName : "Javascript",
+        answers: [ 
+          { Option: `100`, isCorrect: false },
+          { Option: `SyntaxError: Identifier 'height' has already been declared`, isCorrect: false },
+          { Option: `300`, isCorrect: false },
+          { Option: `SyntaxError: Identifier 'base' has already been declared`, isCorrect: true },
+        ],
+        correct: `SyntaxError: Identifier 'base' has already been declared`,
+      },
+      {
+        question: "What will be return value of TnS_Rectangle?",
+        code : `
+        function TnS_Rectangle()
+        {
+          var height = 10 ;
+          let base = 20 ;
+          
+          if(height  > 5)
+          {
+            let base = 10 ;
+          }
+          
+          return base*height ;
+        }
+        `,
+        langName : "Javascript",
+        answers: [ 
+          { Option: `200`, isCorrect: true },
+          { Option: `100`, isCorrect: false },
+          { Option: `Infinite loop`, isCorrect: false },
+          { Option: `SyntaxError: Identifier 'base' has already been declared`, isCorrect: false },
+        ],
+        correct: `200`,
+      },
+      {
+        question: "Which of the following is true about React.lazy ?",
+        code : ``,
+        langName : "React",
+        answers: [ 
+          { Option: `It helps in dynamic rendering of large data.`, isCorrect: false },
+          { Option: `It is used for handling asynchronous functions.`, isCorrect: false },
+          { Option: `It renders dynamic import as regular component.`, isCorrect: true },
+          { Option: `It restricts component from re-rendering.`, isCorrect: false },
+        ],
+        correct: `It renders dynamic import as regular component.`,
+      },
+      {
+        question: "Which of the following method is used to render fallback UI in React error boundries ?",
+        code : ``,
+        langName : "React",
+        answers: [ 
+          { Option: `static getDerivedStateFromProps()`, isCorrect: false },
+          { Option: `static getDerivedStateFromError()`, isCorrect: true },
+          { Option: `componentWillCatch()`, isCorrect: false },
+          { Option: `shouldComponentCatch()`, isCorrect: false },
+        ],
+        correct: `static getDerivedStateFromError()`,
+      },
+      {
+        question: "Error boundaries do not catch errors for ",
+        code : ``,
+        langName : "React",
+        answers: [ 
+          { Option: `setTimeout()`, isCorrect: false },
+          { Option: `Event handlers`, isCorrect: false },
+          { Option: `Server side rendering`, isCorrect: false },
+          { Option: `All of above`, isCorrect: true },
+        ],
+        correct: `All of above`,
+      },
+      {
+        question: "Which tag render heading with highest font size ?  ",
+        code : ``,
+        langName : "HTML",
+        answers: [ 
+          { Option: `<h1>`, isCorrect: true },
+          { Option: `<h2>`, isCorrect: false },
+          { Option: `<h3>`, isCorrect: false },
+          { Option: `<h4>`, isCorrect: false },
+        ],
+        correct: `<h1>`,
+      },
     ],
     mcqList: [],
+    queCount : 0,
   };
   
   function rootReducer(state = initialState, action) {
@@ -1511,6 +1665,11 @@ import {
     if (action.type === ADD_mcqList) {
       return Object.assign({}, state, {
         mcqList: [...state.mcqList, action.payload],
+      });
+    }
+    if (action.type === SET_queCount) {
+      return Object.assign({}, state, {
+        queCount: action.payload,
       });
     }
   

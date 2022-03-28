@@ -14,7 +14,7 @@ import {
 import { Paper } from "@material-ui/core";
 import ErrorOutlineIcon from "@material-ui/icons/ErrorOutline";
 import CheckCircleOutlineIcon from "@material-ui/icons/CheckCircleOutline";
-import { addMcqList } from "../../actions";
+import { addMcqList, setQueCount } from "../../actions";
 import { scroller } from "react-scroll";
 import PropTypes from "prop-types";
 import KeyboardArrowUpIcon from "@material-ui/icons/KeyboardArrowUp";
@@ -25,6 +25,7 @@ import {
 import { PrismLight as SyntaxHighlighter } from "react-syntax-highlighter";
 import McqPageCard from "../McqPage_Card/mcqPageCard";
 import CustomizedSnackbars from "../Alert/alert";
+import StepperList from '../Stepper/stepper'
 
 function ScrollTop(props) {
   const { children, window } = props;
@@ -64,19 +65,22 @@ const mapStateToProps = (state) => {
     darkMode: state.darkMode,
     langName: state.langName,
     mcqList: state.mcqList,
+    queCount : state.queCount
   };
 };
 const mapDispatchToProps = (dispatch) => {
   return {
     addMcqList: (mcqList) => dispatch(addMcqList(mcqList)),
+    setQueCount : (queCount)=>dispatch(setQueCount(queCount))
   };
 };
-const Mcqs = ({ darkMode, mcqs, langName, mcqList, props }) => {
+const Mcqs = ({ darkMode, mcqs, langName, mcqList, props ,queCount }) => {
   const classes = McqStyle();
   const [isSubmit, setisSubmit] = React.useState(false);
   const [openErrorAlert, setopenErrorAlert] = React.useState(false);
   const [openQuizSwitchAlert, setopenQuizSwitchAlert] = React.useState(false);
   const [correctAns, setCorrectAns] = React.useState(0);
+  const [totalQueLength, setTotalQueLength] = React.useState(0);
   const [filterdMcq, setFilteredMcq] = React.useState([]);
   const [dontShowIcon, setDontShowIcon] = React.useState(false);
   const dispatch = useDispatch();
@@ -84,9 +88,23 @@ const Mcqs = ({ darkMode, mcqs, langName, mcqList, props }) => {
   var cnt = 0;
   var zeroCnt = 0;
 
+  useEffect(()=>{
+    dispatch(setQueCount(0));
+  },[langName])
+
   useEffect(() => {
     let filteredMcq = mcqs.filter((l) => l.langName === langName);
-    setFilteredMcq(filteredMcq);
+    setTotalQueLength(filteredMcq.length);
+    var actualQueCount;
+    if(queCount === 0)
+    {
+      actualQueCount = 7;
+    }
+    else{
+      actualQueCount = queCount
+    }
+    let slicedForStepper = filteredMcq.slice(actualQueCount - 7 , actualQueCount);
+    setFilteredMcq(slicedForStepper);
     forceUpdate();
     setisSubmit(false);
     setopenQuizSwitchAlert(true);
@@ -103,7 +121,7 @@ const Mcqs = ({ darkMode, mcqs, langName, mcqList, props }) => {
         document.getElementById(filter.question + "incorrect").className =
           classes.initialAlert;
     });
-  }, [langName, mcqs]);
+  }, [langName, mcqs,queCount]);
 
   const setErrorAlert = () => {
     console.log("inside error alert");
@@ -182,6 +200,7 @@ const Mcqs = ({ darkMode, mcqs, langName, mcqList, props }) => {
       >
         <Toolbar id="back-to-top-anchor" />
         <McqPageCard />
+        {totalQueLength > 7 && <StepperList />}
         <CustomizedSnackbars
           isopenAlert={openErrorAlert}
           message="Please attempt all the questions !!!"
@@ -189,12 +208,12 @@ const Mcqs = ({ darkMode, mcqs, langName, mcqList, props }) => {
         />
         <CustomizedSnackbars
           isopenAlert={openQuizSwitchAlert}
-          message={`Switched to ${langName} Quiz successfully !!!`}
+          message={`Switched to ${langName} Quiz!!!`}
           severity="success"
         />
 
         <Grid item container className={classes.marginTop3}>
-          <h1>{langName} Quiz</h1>
+          <h1>{langName} MCQ List {queCount/7 > 0 ? queCount/7 : 1}</h1>
         </Grid>
         <Grid item container xs={12} sm={9}>
           <Paper className={classes.rootpaper}>

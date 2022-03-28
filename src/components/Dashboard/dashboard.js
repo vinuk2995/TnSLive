@@ -106,9 +106,7 @@ const Dashboard = ({ props, langName }) => {
           </h2>
         </Grid>
 
-        <Grid container item xs={12} >
-          <MediaCard isCardClicked={isCardClicked} />
-        </Grid>
+        <MediaCard isCardClicked={isCardClicked} />
 
         <Grid
           container

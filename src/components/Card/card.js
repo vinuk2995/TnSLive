@@ -46,68 +46,59 @@ const MediaCard = ({ isCardClicked }) => {
     dispatch(setlangName(value));
   };
   return (
-    <Grid
-      container
-      className={classes.root}
-      direction="row"
-      justify="space-between"
-    >
-      <Grid item xs={12}>
-        <Grid container justify="center" spacing={2}>
-          {Data.map((data) => {
-            return (
-              <Grid item xs={11} sm={3}>
-                <Paper>
-                  <Card
-                    elevation={4}
-                    className={(classes.root, classes.border)}
-                  >
-                    <CardActionArea
-                      onClick={() => {
-                        postLangName(data.langName);
-                      }}
-                    >
-                      <CardContent>
-                        <Typography
-                          gutterBottom
-                          variant="h5"
-                          component="h2"
-                          className={classes.color}
-                        >
-                          {data.langName === "React"
-                            ? data.langName.concat(" Js")
-                            : data.langName}
-                        </Typography>
-                        <Typography
-                          variant="body2"
-                          color="textSecondary"
-                          component="p"
-                        >
-                          {data.info}
-                        </Typography>
-                      </CardContent>
-                    </CardActionArea>
-                    <CardActions>
-                      <Link to="/quiz" className={classes.Link}>
-                        <Button
-                          size="small"
-                          color="primary"
-                          onClick={() => {
-                            postLangNameCardAction(data.langName);
-                          }}
-                        >
-                          Take Quiz
-                        </Button>
-                      </Link>
-                    </CardActions>
-                  </Card>
-                </Paper>
-              </Grid>
-            );
-          })}
-        </Grid>
-      </Grid>
-    </Grid>
+
+    <div style={{ display: "flex" }}>
+      {Data.map((data) => {
+        return (
+          <Card
+            elevation={4}
+            className={classes.root}
+          >
+            <CardActionArea
+              onClick={() => {
+                postLangName(data.langName);
+              }}
+            >
+              <CardContent>
+                <Typography
+                  gutterBottom
+                  variant="h5"
+                  component="h2"
+                  className={classes.color}
+                >
+                  {data.langName === "React"
+                    ? data.langName.concat(" Js")
+                    : data.langName}
+                </Typography>
+                <Typography
+                  variant="body2"
+                  color="textSecondary"
+                  component="p"
+                >
+                  {data.info}
+                </Typography>
+              </CardContent>
+            </CardActionArea>
+            <CardActions>
+              <Link to="/quiz" className={classes.Link}>
+                <Button
+                  size="small"
+                  color="primary"
+                  onClick={() => {
+                    postLangNameCardAction(data.langName);
+                  }}
+                >
+                  Take Quiz
+                </Button>
+              </Link>
+            </CardActions>
+          </Card>
+
+
+        );
+      })}
+
+    </div>
   );
 };
 
